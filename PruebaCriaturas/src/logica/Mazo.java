@@ -9,8 +9,9 @@ package logica;
  *
  * @author User
  */
-public class Mazo implements ArmaAbstracta{
-     String nombre;
+public class Mazo implements ArmaAbstracta {
+
+    String nombre;
     String descripcion;
     String tamaño;
 
@@ -21,21 +22,22 @@ public class Mazo implements ArmaAbstracta{
 
     @Override
     public String getDescripcion() {
-       return descripcion;
+        return descripcion;
     }
 
     @Override
     public String getTamaño() {
-       return tamaño; 
+        return tamaño;
     }
 
     public Mazo() {
         this.nombre = "Mazo:";
-        this.descripcion = "Un mazo o combo es una herramienta de mano que sirve"
-                          + " para golpear o percutir; tiene la forma de un martillo,"
-                          + " pero es de mayor tamaño y peso.";
+        this.descripcion = "<html><justify>"
+                + "Un mazo o combo es una herramienta de mano que sirve para golpear o percutir;  <br>"
+                + "tiene la forma de un martillo, pero es de mayor tamaño y peso. <br>"
+                + "Tamaño: 1,5m a 2m </html>";
         this.tamaño = "1,5m a 2m";
-        
+
     }
-    
+
 }

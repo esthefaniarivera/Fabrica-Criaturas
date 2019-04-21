@@ -24,15 +24,15 @@ public class ArmaduraMithril implements ArmaduraAbstracta{
     }
 
     public ArmaduraMithril() {
-        this.descripcion = "Se trataba de una cota de malla de mangas largas, armada "
-                + "y entrelazada con pequeños anillos de mithril, que la hacían muy "
-                + "flexible, liviana pero muy dura y resistente. Distintos tipos "
-                + "de gemas la tachonaban en casi toda su superficie.";
-        this.material = "Mithril: Se dice que es el más duro de los metales y "
-                + "que tiene diversas propiedades. Aparentemente, tiene el aspecto"
-                + " de la plata, pero no se oxida ni ennegrece jamás, como el platino;"
-                + " siendo considerado mucho más valioso que el oro. Sin embargo "
-                + "poseería una mayor fortaleza en comparación a la plata y el platino.";
+        this.descripcion = "<html><justify> Se trataba de una cota de malla de mangas largas, armada y entrelazada  con  <br> "
+                + "pequeños anillos de mithril, que la hacían muy flexible, liviana pero  muy dura y<br>  "
+                + " resistente. Distintos tipos de gemas la tachonaban en casi toda su superficie.<br> "
+                + "</html>";
+        this.material = "<html><justify>Mithril: Se dice que es el más duro de los metales y que tiene diversas propiedades.<br>  "
+                + "   Aparentemente, tiene el aspecto  de la plata, pero no se oxida ni ennegrece jamás, como  <br> "
+                + "  el platino; siendo considerado mucho más valioso que el oro. Sin embargo poseería  <br> "
+                + " una mayor  fortaleza en comparación a la plata y el platino. </html> "
+                ;
     }
     
 }

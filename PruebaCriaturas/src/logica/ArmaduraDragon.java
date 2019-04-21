@@ -24,10 +24,10 @@ public class ArmaduraDragon implements ArmaduraAbstracta{
     }
 
     public ArmaduraDragon() {
-        this.descripcion = "una piel de impenetrables escamas de la dureza del acero. "
-                + "Su único punto débil, el vientre, esta protegido casi por completo "
-                + "por una capa de piedras preciosas y oro, incrustadas en su piel.";
-        this.material = "Escamas y joyas";
+        this.descripcion = "<html><justify> Sobre la piel posee una cubierta de impenetrables escamas de la dureza del acero.<br> "
+                + "Su único punto débil, el vientre, esta protegido casi por completo por una capa de <br>"
+                + "piedras preciosas y oro, incrustadas en su piel. </html>";
+        this.material = "Escamas, piedras preciosas y oro";
     }
     
     

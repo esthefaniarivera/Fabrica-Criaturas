@@ -19,15 +19,14 @@ public class DescripcionGigante implements DescripcionAbstracta{
     }
 
     public DescripcionGigante() {
-        this.descripcion = "Los gigantes miden entre tres y cinco metros. Tienen "
-                + "una gran fuerza y son capaces de realizar impresionantes proezas "
-                + "físicas. En apariencia están cubiertos de una especie de piel peluda "
-                + "que es más gruesa debajo de la cintura. El pelaje de los gigantes se "
-                + "empieza a volver grisáceo al envejecer. Las cabezas de los gigantes "
-                + "están inclinadas hacia adelante, con los hombros hacia atrás. Cuentan "
-                + "con unos ojos pequeños y caras cuadradas, brazos largos que cuelgan "
-                + "más que los de un humano y piernas cortas en comparación con su "
-                + "cuerpo. Las hembras y machos son muy parecidos en aspecto físico.";
+        this.descripcion =
+                "<html><justify> Los gigantes miden entre tres y cinco metros. Tienen una gran fuerza y son capaces de <br>"
+                + "realizar impresionantes proezas físicas. En apariencia están cubiertos de una especie    <br>"
+                + "de piel peluda que es más gruesa debajo de la cintura. El pelaje de los gigantes se <br>"
+                + "empieza a volver grisáceo al envejecer.  <br>"
+                + "Las cabezas de los gigantes están inclinadas hacia adelante, con los hombros hacia   <br>"
+                + "atrás. Poseen brazos largos que cuelgan más que los de un humano y piernas cortas  <br>"
+                + "en comparación con su cuerpo. </html>";
     }
     
 }

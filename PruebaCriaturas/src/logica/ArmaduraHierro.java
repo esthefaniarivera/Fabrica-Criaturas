@@ -24,10 +24,10 @@ public class ArmaduraHierro implements ArmaduraAbstracta{
     }
 
     public ArmaduraHierro() {
-        this.descripcion = "Peto y yelmo que cubren su parte humana la cual es la mas vulnerable."
-                + "Está hecha de hierro negro especial y te protege de los ataques de fuego. Pesa mucho.";
-        this.material = "Hierro: resistencia al desgaste, dureza y resistencia."
-                + " a determinadas temperaturas.";
+        this.descripcion = "<html><justify>Peto y yelmo que cubren su parte humana la cual es la mas vulnerable.<br>"
+                + "Está hecha de hierro negro especial y te protege de los ataques de fuego. Pesa mucho.</html>";
+        this.material = "<html><justify> Hierro: resistencia al desgaste, dureza y resistencia."
+                + " a determinadas temperaturas.</html>";
     }
     
 }

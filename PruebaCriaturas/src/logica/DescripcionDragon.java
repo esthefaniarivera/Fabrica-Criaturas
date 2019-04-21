@@ -19,12 +19,11 @@ public class DescripcionDragon implements DescripcionAbstracta{
     }
 
     public DescripcionDragon() {
-        this.descripcion = "Todos los dragones comparten una pasión por los tesoros "
-                + "(especialmente el oro), la inteligencia sutil, la inmensa astucia, "
-                + "la gran fuerza física, y un poder hipnótico llamado «encantamiento "
-                + "de dragón». Son extremadamente poderosos y peligrosos, y crecen y "
-                + "envejecen muy despacio. Pueden tanto caminar sobre sus cuatro "
-                + "patas como volar con sus alas y expeler fuego.";
+        this.descripcion = "<html><justify> Todos los dragones comparten una pasión por los tesoros (especialmente el oro), <br>"
+                + "la inteligencia sutil, la inmensa astucia, la gran fuerza física, y un poder hipnótico <br>"
+                + "llamado «encantamiento de dragón». Son extremadamente poderosos y peligrosos, <br>"
+                + "crecen y envejecen muy despacio. Pueden tanto caminar  sobre sus cuatro patas <br>"                
+                + "como volar con sus alas y expeler fuego.</html>";
     }
     
 }

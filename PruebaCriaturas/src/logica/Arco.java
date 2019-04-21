@@ -32,12 +32,13 @@ public class Arco implements ArmaAbstracta {
 
     public Arco() {
         this.nombre = "Arco y Flecha:";
-        this.descripcion = "Un arco es un arma flexible que dispara proyectiles \n"
-                + "aerodinámicos denominados flechas. Una cuerda o lazo se une a \n"
-                + "los dos extremos del arco y cuando la cuerda se estira en varias \n"
-                + "ocasiones, los extremos del arco se flexionan. Cuando se libera \n"
-                + "la cuerda, la energía potencial generada por la flexión del arco \n"
-                + "se transforma en la velocidad de la flecha. \n";
+        this.descripcion = "<html><justify> Un arco es un arma flexible que dispara proyectiles aerodinámicos denominados<br>"
+                + "flechas. Una cuerda o lazo se une a los dos extremos del arco y cuando la cuerda se <br>"
+                + "estira en varias ocasiones, los extremos del arco se flexionan. <br>"
+                + "Cuando se libera la cuerda, la energía potencial generada por la flexión del arco<br>"
+               
+                + "se transforma en la velocidad de la flecha.<br>"
+                + "Tamaño arco: 2m</html>";
         this.tamaño = "2m";
         
     }

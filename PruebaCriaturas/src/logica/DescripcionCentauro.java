@@ -19,13 +19,14 @@ public class DescripcionCentauro implements DescripcionAbstracta{
     }
 
     public DescripcionCentauro() {
-        this.descripcion = "Son criaturas muy antiguas, las cuales eran consideradas "
-                + "semihumanos con un cuerpo formado por una cabeza y torso de hombre "
-                + "y de la cintura para debajo el cuerpo de un caballo, por lo que "
-                + "contaban con seis extremidades dos manos y cuatro patas.  Estos"
-                + " seres constan de una gran fuerza destacada por su parte animal, "
-                + "siempre dispuestos a pelear.";
+        this.descripcion = "<html><justify> Son criaturas muy antiguas, las cuales eran consideradas semihumanos con un  <br> "
+                + " cuerpo formado por una cabeza y torso de hombre y de la cintura para  abajo el <br> "
+                + "cuerpo de un caballo, por lo que contaban con seis extremidades dos manos y<br>"
+                + "cuatro patas.  Estos seres constan de una gran fuerza destacada por su parte<br>"
+                + " animal siempre dispuestos a pelear.</html>";
+                
     }
     
     
 }
+

@@ -7,12 +7,13 @@ package logica;
 
 /**
  *
- * @author User
+ * @author ESTEFA
  */
-public class ArmaduraCuero implements ArmaduraAbstracta{
+public class ArmaduraCuero implements ArmaduraAbstracta {
+
     String descripcion;
     String material;
-    
+
     @Override
     public String getDescripccion() {
         return descripcion;
@@ -24,12 +25,13 @@ public class ArmaduraCuero implements ArmaduraAbstracta{
     }
 
     public ArmaduraCuero() {
-        this.descripcion = "Las diferentes placas de piel (que suelen ser de 3 a 4 "
-                + "mm de grosor), se cosen a mano con hilo encerado o más habitualmente,"
-                + " se remachan con remaches metálicos. Estas armaduras pueden ser "
-                + "de muchas formas, debido a la flexibilidad del cuero.";
-        this.material = "Pieles: La piel es un material flexible y cálido, de origen "
-                + "animal, obtenido con el curtido de la piel.";
+        this.descripcion
+                = "<html><justify>Las diferentes placas de piel (que suelen ser de 3 a 4 mm de grosor), se cosen a <br>"
+                + "mano con hilo encerado o más habitualmente, se remachan con remaches metálicos.  <br>"
+                + "Estas armaduras pueden ser de muchas formas, debido a la flexibilidad del cuero </html>";
+        this.material = "<html><justify>"
+                + "Pieles: La piel es un material flexible y cálido, de origen animal, obtenido con el curtido <br>"
+                + " de la piel.</html>";
     }
-    
+
 }

@@ -31,11 +31,11 @@ public class GarraFuego implements ArmaAbstracta{
 
     public GarraFuego() {
         this.nombre = "Garras y Fuego:";
-        this.descripcion = "Garras: Son las manos o pies provistos de uñas largas "
-                + "y afiladas; Fuego: Fluido volatil imposible de apagar, puede arder "
-                + "sobre el agua.";
-        this.tamaño = "Garras: Un dragon adulto llega a tener garras de "
-                + "aproximadamente 40cm; Fuego: Rango de 7m a 8m";
+        this.descripcion = "<html><justify> Garras: Son las manos o pies provistos de uñas largas "
+                + "y afiladas.<br> Fuego: Fluido volatil imposible de apagar, puede arder "
+                + "sobre el agua.</html>";
+        this.tamaño = "<html><justify> Garras: Un dragon adulto llega a tener garras de "
+                + "aproximadamente 40cm. <br> Fuego: Rango de 7m a 8m</html> ";
         
     }
     
