@@ -4,13 +4,30 @@
  * and open the template in the editor.
  */
 package pruebacriaturas;
+import java.awt.Font;
+import java.awt.Graphics2D;
+import java.awt.GridLayout;
+import java.awt.image.BufferedImage;
+import java.net.URL;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.WindowConstants;
+import logica.Centauro;
+import logica.Dragon;
+import logica.Elfo;
+import logica.FabricaAbstracta;
+import logica.Gigante;
+import logica.Valquiria;
 
 /**
  *
  * @author ESTEFA
  */
 public class Inicio extends javax.swing.JFrame {
-
+FabricaAbstracta fabrica;
     /**
      * Creates new form Inicio
      */
@@ -27,18 +44,51 @@ public class Inicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        botonDragon = new javax.swing.JButton();
         Centauro = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         Valquiria = new javax.swing.JButton();
         Elfo = new javax.swing.JButton();
-        Dragon = new javax.swing.JButton();
         Gigante = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel8.setText("Elfo");
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setText("Dragon");
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel10.setText("Centauro");
+
+        botonDragon.setFont(new java.awt.Font("Tahoma", 0, 3)); // NOI18N
+        botonDragon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_Dragon.jpg"))); // NOI18N
+        botonDragon.setText("Dragon");
+        botonDragon.setHideActionText(true);
+        botonDragon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        botonDragon.setPreferredSize(new java.awt.Dimension(120, 120));
+        botonDragon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonDragonActionPerformed(evt);
+            }
+        });
+
         Centauro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_Centauro.jpg"))); // NOI18N
-        Centauro.setText("");
-        Centauro.setLabel("");
         Centauro.setPreferredSize(new java.awt.Dimension(120, 120));
+        Centauro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CentauroActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Algerian", 0, 30)); // NOI18N
+        jLabel11.setText("seleccione su criatura");
 
         Valquiria.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_Valquiria.jpg"))); // NOI18N
         Valquiria.setMaximumSize(new java.awt.Dimension(120, 120));
@@ -52,9 +102,11 @@ public class Inicio extends javax.swing.JFrame {
 
         Elfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_Elfo.jpg"))); // NOI18N
         Elfo.setPreferredSize(new java.awt.Dimension(120, 120));
-
-        Dragon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_Dragon.jpg"))); // NOI18N
-        Dragon.setPreferredSize(new java.awt.Dimension(120, 120));
+        Elfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ElfoActionPerformed(evt);
+            }
+        });
 
         Gigante.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/Logo_Gigante.jpg"))); // NOI18N
         Gigante.setPreferredSize(new java.awt.Dimension(120, 120));
@@ -64,46 +116,226 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("Valquiria");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel7.setText("Gigante ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(72, 72, 72)
+                .addComponent(jLabel10)
+                .addGap(95, 95, 95)
+                .addComponent(jLabel6)
+                .addGap(91, 91, 91)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel8)
+                .addGap(102, 102, 102)
+                .addComponent(jLabel9)
+                .addGap(70, 70, 70))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(Centauro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Valquiria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Gigante, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(Elfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(Dragon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addGap(18, 18, 18)
+                .addComponent(botonDragon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(186, 186, 186)
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addComponent(jLabel11)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Valquiria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Elfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Dragon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Gigante, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(Centauro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(143, Short.MAX_VALUE))
+                    .addComponent(Valquiria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Elfo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Gigante, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Centauro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botonDragon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botonDragonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDragonActionPerformed
+        fabrica = new Dragon();
+        JFrame valquiria = new JFrame();
+        JLabel titulo = new JLabel("dragon");
+        titulo.setFont(new Font("algerian",Font.BOLD,40));
+        JLabel descripcionCriatura = new JLabel();
+        JLabel descripcionArmadura = new JLabel();
+        JLabel material = new JLabel();
+        JLabel arma = new JLabel();
+        JLabel tamaño = new JLabel();
+        JLabel imagen = new JLabel("");
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenescriaturas/dragon.png")));
+
+        descripcionCriatura.setText(fabrica.getDescripcion().getDescripcion());
+        descripcionArmadura.setText(fabrica.getArmadura().getDescripccion());
+        material.setText(fabrica.getArmadura().getMaterial());
+        arma.setText(fabrica.getArma().getDescripcion());
+        tamaño.setText(fabrica.getArma().getTamaño());
+        valquiria.setSize(1000, 700);
+
+        valquiria.getContentPane().add(titulo);
+        valquiria.getContentPane().add(descripcionCriatura);
+        valquiria.getContentPane().add(descripcionArmadura);
+        valquiria.getContentPane().add(material);
+        valquiria.getContentPane().add(arma);
+        valquiria.getContentPane().add(imagen);
+        valquiria.getContentPane().setLayout(new GridLayout(3, 2));
+        valquiria.setVisible(true);
+        valquiria.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }//GEN-LAST:event_botonDragonActionPerformed
+
+    private void CentauroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CentauroActionPerformed
+        fabrica = new Centauro();
+        JFrame valquiria = new JFrame();
+        JLabel titulo = new JLabel("centauro");
+        titulo.setFont(new Font("algerian",Font.BOLD,40));
+        JLabel descripcionCriatura = new JLabel();
+        JLabel descripcionArmadura = new JLabel();
+        JLabel material = new JLabel();
+        JLabel arma = new JLabel();
+        JLabel tamaño = new JLabel();
+        JLabel imagen = new JLabel();
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenescriaturas/centauro.png")));
+
+        descripcionCriatura.setText(fabrica.getDescripcion().getDescripcion());
+        descripcionArmadura.setText(fabrica.getArmadura().getDescripccion());
+        material.setText(fabrica.getArmadura().getMaterial());
+        arma.setText(fabrica.getArma().getDescripcion());
+        tamaño.setText(fabrica.getArma().getTamaño());
+
+        valquiria.setSize(1000, 700);
+
+        valquiria.getContentPane().add(titulo);
+        valquiria.getContentPane().add(descripcionCriatura);
+        valquiria.getContentPane().add(descripcionArmadura);
+        valquiria.getContentPane().add(material);
+        valquiria.getContentPane().add(arma);
+        valquiria.getContentPane().add(imagen);
+        valquiria.getContentPane().setLayout(new GridLayout(3, 2));
+        valquiria.setVisible(true);
+        valquiria.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }//GEN-LAST:event_CentauroActionPerformed
+
     private void ValquiriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ValquiriaActionPerformed
-        // TODO add your handling code here:
+        fabrica = new Valquiria();
+        JFrame valquiria = new JFrame();
+        JLabel titulo = new JLabel("valquiria");
+        titulo.setFont(new Font("algerian",Font.BOLD,40));
+        JLabel descripcionCriatura = new JLabel();
+        JLabel descripcionArmadura = new JLabel();
+        JLabel material = new JLabel();
+        JLabel arma = new JLabel();
+        JLabel tamaño = new JLabel();
+        JLabel imagen = new JLabel();
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenescriaturas/valquiria.png")));
+
+        descripcionCriatura.setText(fabrica.getDescripcion().getDescripcion());
+        descripcionArmadura.setText(fabrica.getArmadura().getDescripccion());
+        material.setText(fabrica.getArmadura().getMaterial());
+        arma.setText(fabrica.getArma().getDescripcion());
+        tamaño.setText(fabrica.getArma().getTamaño());
+
+        valquiria.setSize(1000, 700);
+
+        valquiria.getContentPane().add(titulo);
+        valquiria.getContentPane().add(descripcionCriatura);
+        valquiria.getContentPane().add(descripcionArmadura);
+        valquiria.getContentPane().add(material);
+        valquiria.getContentPane().add(arma);
+        valquiria.getContentPane().add(imagen);
+        valquiria.getContentPane().setLayout(new GridLayout(3, 2));
+        valquiria.setVisible(true);
+        valquiria.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }//GEN-LAST:event_ValquiriaActionPerformed
 
+    private void ElfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElfoActionPerformed
+        fabrica = new Elfo();
+        JFrame valquiria = new JFrame();
+        JLabel titulo = new JLabel("elfo");
+        titulo.setFont(new Font("algerian",Font.BOLD,40));
+        JLabel descripcionCriatura = new JLabel();
+        JLabel descripcionArmadura = new JLabel();
+        JLabel material = new JLabel();
+        JLabel arma = new JLabel();
+        JLabel tamaño = new JLabel();
+        JLabel imagen = new JLabel();
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenescriaturas/Elfo.png")));
+
+        descripcionCriatura.setText(fabrica.getDescripcion().getDescripcion());
+        descripcionArmadura.setText(fabrica.getArmadura().getDescripccion());
+        material.setText(fabrica.getArmadura().getMaterial());
+        arma.setText(fabrica.getArma().getDescripcion());
+        tamaño.setText(fabrica.getArma().getTamaño());
+
+        valquiria.setSize(1000, 700);
+
+        valquiria.getContentPane().add(titulo);
+        valquiria.getContentPane().add(descripcionCriatura);
+        valquiria.getContentPane().add(descripcionArmadura);
+        valquiria.getContentPane().add(material);
+        valquiria.getContentPane().add(arma);
+        valquiria.getContentPane().add(imagen);
+        valquiria.getContentPane().setLayout(new GridLayout(3, 2));
+        valquiria.setVisible(true);
+        valquiria.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+    }//GEN-LAST:event_ElfoActionPerformed
+
     private void GiganteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GiganteActionPerformed
-        // TODO add your handling code here:
+        fabrica = new Gigante();
+        JFrame valquiria = new JFrame();
+        JLabel titulo = new JLabel("gigante");
+        titulo.setFont(new Font("algerian",Font.BOLD,40));
+        JLabel descripcionCriatura = new JLabel();
+        JLabel descripcionArmadura = new JLabel();
+        JLabel material = new JLabel();
+        JLabel arma = new JLabel();
+        JLabel tamaño = new JLabel();
+        JLabel imagen = new JLabel();
+        imagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenescriaturas/gigante.png")));
+
+        descripcionCriatura.setText(fabrica.getDescripcion().getDescripcion());
+        descripcionArmadura.setText(fabrica.getArmadura().getDescripccion());
+        material.setText(fabrica.getArmadura().getMaterial());
+        arma.setText(fabrica.getArma().getDescripcion());
+        tamaño.setText(fabrica.getArma().getTamaño());
+
+        valquiria.setSize(1000, 700);
+
+        valquiria.getContentPane().add(titulo);
+        valquiria.getContentPane().add(descripcionCriatura);
+        valquiria.getContentPane().add(descripcionArmadura);
+        valquiria.getContentPane().add(material);
+        valquiria.getContentPane().add(arma);
+        valquiria.getContentPane().add(imagen);
+        valquiria.getContentPane().setLayout(new GridLayout(3, 2));
+        valquiria.setVisible(true);
+        valquiria.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }//GEN-LAST:event_GiganteActionPerformed
 
     /**
@@ -143,9 +375,15 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Centauro;
-    private javax.swing.JButton Dragon;
     private javax.swing.JButton Elfo;
     private javax.swing.JButton Gigante;
     private javax.swing.JButton Valquiria;
+    private javax.swing.JButton botonDragon;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
